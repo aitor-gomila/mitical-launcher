@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_epic_games_launcher/services/legendary/notifier.dart';
-import 'package:flutter_epic_games_launcher/services/legendary/store.dart';
 import 'package:provider/provider.dart';
 
-import 'package:flutter_epic_games_launcher/services/store/store.dart';
-import 'package:flutter_epic_games_launcher/frontend/about.dart';
+import 'package:mitic_launcher/services/legendary/notifier.dart';
+import 'package:mitic_launcher/services/legendary/store.dart';
+import 'package:mitic_launcher/services/store/store.dart';
+import 'package:mitic_launcher/frontend/legendary/account.dart';
 
 void main() {
   runApp(

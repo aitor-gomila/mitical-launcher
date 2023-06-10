@@ -1,4 +1,4 @@
-package com.example.flutter_epic_games_launcher
+package org.aitor-gomila.mitic_launcher
 
 import io.flutter.embedding.android.FlutterActivity
 

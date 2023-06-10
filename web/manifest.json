@@ -1,6 +1,6 @@
 {
-    "name": "flutter_epic_games_launcher",
-    "short_name": "flutter_epic_games_launcher",
+    "name": "mitic_launcher",
+    "short_name": "mitic_launcher",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

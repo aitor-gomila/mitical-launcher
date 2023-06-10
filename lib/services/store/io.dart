@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:convert';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:flutter_epic_games_launcher/services/store/common.dart';
+import 'package:mitic_launcher/services/store/common.dart';
 
 class Store implements IStore {
   Store(this.identifier);
