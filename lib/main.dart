@@ -41,7 +41,7 @@ class _StateApplication extends State<Application> {
   final List<Widget> _widgetList = [
     Container(),
     Container(),
-    AboutPage()
+    const AboutPage()
   ];
 
   @override
