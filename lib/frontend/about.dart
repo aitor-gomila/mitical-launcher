@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class RelevantURL {
   static const String gitHubRepository =
-      "https://github.com/aitor-gomila/flutter-epic-games-launcher";
+      "https://github.com/aitor-gomila/mitic-launcher";
   static const String governanceUrl =
-      "https://github.com/aitor-gomila/flutter-epic-games-launcher/discussions";
+      "https://github.com/aitor-gomila/mitic-launcher/discussions";
   static const String discordInvite = "https://discord.gg/e2wmBteX9j";
   static const String legendaryRepository =
       "https://github.com/derrod/legendary";
