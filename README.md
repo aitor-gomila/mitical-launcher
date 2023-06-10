@@ -1,9 +1,7 @@
-# Linux Flutter Epic Games Launcher
+# Mitical Launcher
 
-A cross-platform epic games launcher made with flutter. It uses [legendary-dart](https://github.com/aitor-gomila/legendary-dart) to communicate with [Legendary](https://github.com/derrod/legendary).
+A cross-platform epic games launcher with out-of-the-box native Unreal Engine support. It uses [Legendary](https://github.com/derrod/legendary) to communicate with Epic Games Launcher.
 
-## Install
-
-## Issues/feature requests
-
-##
+- [Download Mitic Launcher](https://github.com/aitor-gomila/mitic-launcher/releases)
+- [Open and democratic governance](https://github.com/aitor-gomila/mitic-launcher/discussions)
+- Join the [Discord server](https://discord.gg/e2wmBteX9j).
