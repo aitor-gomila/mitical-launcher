@@ -100,10 +100,10 @@ packages:
     dependency: "direct main"
     description:
       name: legendary
-      sha256: d6876f3007e80dd96235c3d540266236ad17ebe0adf1f0d077d3e5bab2385607
+      sha256: "38f2f8c31115193b96782328078332baee2a6252f875c5641fc2ef7bcda98926"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.0"
+    version: "0.1.1"
   lints:
     dependency: transitive
     description:
