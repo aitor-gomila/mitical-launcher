@@ -41,7 +41,7 @@ class LegendaryService extends ChangeNotifier {
     });
   }
 
-  Future<void> refresh() async {
+  void refresh() {
     status = null;
 
     _client?.status().then((value) => status = value);
