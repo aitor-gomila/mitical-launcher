@@ -4,12 +4,12 @@ import 'package:mitic_launcher/services/legendary/legendary.dart';
 import 'package:mitic_launcher/services/store/store.dart';
 
 class LegendaryService extends ChangeNotifier {
-  LegendaryBaseClient? _client;
+  ILegendaryBaseClient? _client;
 
   Status? _status;
 
   Status? get status => _status;
-  set status (Status? value) {
+  set status(Status? value) {
     _status = value;
     notifyListeners();
   }
@@ -17,7 +17,7 @@ class LegendaryService extends ChangeNotifier {
   List<Game>? _games;
 
   List<Game>? get games => _games;
-  set games (List<Game>? value) {
+  set games(List<Game>? value) {
     _games = value;
     notifyListeners();
   }
@@ -26,35 +26,28 @@ class LegendaryService extends ChangeNotifier {
 
   List<InstalledGame>? get gamesInstalled => _gamesInstalled;
 
-  set gamesInstalled (List<InstalledGame>? value) {
+  set gamesInstalled(List<InstalledGame>? value) {
     _gamesInstalled = value;
     notifyListeners();
   }
 
   LegendaryService() {
-    Store("legendary").read()
-      .then((jsonLegendarySettings) {
-        final legendarySettings = LegendaryStore.fromJson(jsonLegendarySettings);
+    Store("legendary").read().then((jsonLegendarySettings) {
+      final legendarySettings = LegendaryStore.fromJson(jsonLegendarySettings);
 
-        _client = LegendaryProcessClient(legendaryPath: legendarySettings.legendaryPath);
+      _client = LegendaryClient(legendaryPath: legendarySettings.legendaryPath);
 
-        refresh();
-      });
+      refresh();
+    });
   }
 
   Future<void> refresh() async {
     status = null;
 
-    _client?.status().then(
-      (value) => status = value
-    );
+    _client?.status().then((value) => status = value);
 
-    _client?.list().then(
-      (value) => games = value
-    );
+    _client?.list().then((value) => games = value);
 
-    _client?.listInstalled().then(
-      (value) => gamesInstalled = value
-    );
+    _client?.listInstalled().then((value) => gamesInstalled = value);
   }
 }
