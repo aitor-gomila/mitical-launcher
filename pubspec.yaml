@@ -22,3 +22,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/legendary/darwin/legendary
+    - assets/legendary/windows/legendary.exe
+    - assets/legendary/linux/legendary
