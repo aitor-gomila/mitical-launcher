@@ -1,8 +1,6 @@
 import 'dart:io';
 import 'package:path/path.dart' as path;
 
-enum LegendaryStoreValue<T> { none, loading, error<Error>(), value<T>() }
-
 class LegendaryStore {
   // Default platform name e.g. windows, mac and linux
   static final String _platformName = Platform.isWindows
