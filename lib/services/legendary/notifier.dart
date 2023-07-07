@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:legendary/legendary.dart';
 import 'package:mitic_launcher/services/legendary/legendary.dart';
@@ -38,7 +40,13 @@ class LegendaryService extends ChangeNotifier {
       _client = LegendaryClient(legendaryPath: legendarySettings.legendaryPath);
 
       refresh();
-    });
+    }).catchError((_) {
+      final legendarySettings = LegendaryStore();
+
+      _client = LegendaryClient(legendaryPath: legendarySettings.legendaryPath);
+
+      refresh();
+    }, test: (e) => e is PathNotFoundException);
   }
 
   void refresh() {
