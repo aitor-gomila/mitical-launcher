@@ -52,10 +52,12 @@ class LegendaryService extends ChangeNotifier {
   void refresh() {
     status = null;
 
-    _client?.status().then((value) => status = value);
+    _client?.status().then((value) async => status = await value.data);
 
-    _client?.list().then((value) => games = value);
+    _client?.list().then((value) async => games = await value.data);
 
-    _client?.listInstalled().then((value) => gamesInstalled = value);
+    _client
+        ?.listInstalled()
+        .then((value) async => gamesInstalled = await value.data);
   }
 }
