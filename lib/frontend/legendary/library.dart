@@ -23,6 +23,6 @@ class LibraryPageItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(game.appName);
+    return Text(game.appTitle);
   }
 }
