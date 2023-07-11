@@ -51,6 +51,8 @@ class LegendaryService extends ChangeNotifier {
 
   void refresh() {
     status = null;
+    games = null;
+    gamesInstalled = null;
 
     _client?.status().then((value) async => status = await value.data);
 
