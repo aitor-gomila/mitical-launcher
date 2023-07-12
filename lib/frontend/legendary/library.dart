@@ -30,8 +30,8 @@ class LibraryPageItem extends StatelessWidget {
       if (image["type"] != "DieselGameBoxTall") continue;
 
       return Container(
-        height: 512,
-        width: 680,
+        height: 697,
+        width: 522,
         decoration: BoxDecoration(
           image: DecorationImage(
               image: NetworkImage(image["url"]), fit: BoxFit.cover),
