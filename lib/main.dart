@@ -22,9 +22,16 @@ class Application extends StatefulWidget {
 }
 
 class _StateApplication extends State<Application> {
-  final int _selectedIndex = 0;
+  int _selectedIndex = 0;
+
+  void setSelectedIndex(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   final List<Widget> _widgetList = [
+    // Library
     Consumer<LegendaryService>(
       builder: (context, service, child) {
         if (service.games == null) {
@@ -36,6 +43,7 @@ class _StateApplication extends State<Application> {
         return LibraryPage(games: service.games!);
       },
     ),
+    // Settings
     Consumer<LegendaryService>(builder: (context, service, child) {
       if (service.status == null) {
         return const Center(child: CircularProgressIndicator());
@@ -50,19 +58,25 @@ class _StateApplication extends State<Application> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(useMaterial3: true),
-      home: Scaffold(
-        body: _widgetList[_selectedIndex],
-        appBar: AppBar(
-          title: Text(_namesList[_selectedIndex]),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.refresh),
-              onPressed: () => context.read<LegendaryService>().refresh(),
-            )
-          ],
-        ),
-      ),
-    );
+        theme: ThemeData(useMaterial3: true),
+        home: Scaffold(
+          body: Row(
+            children: [
+              SizedBox(
+                  width: 150,
+                  child: ListView(children: [
+                    ListTile(
+                        title: const Text("Library"),
+                        leading: const Icon(Icons.book),
+                        onTap: () => setSelectedIndex(0)),
+                    ListTile(
+                        title: const Text("Settings"),
+                        leading: const Icon(Icons.settings),
+                        onTap: () => setSelectedIndex(1))
+                  ])),
+              Expanded(child: _widgetList[_selectedIndex])
+            ],
+          ),
+        ));
   }
 }
