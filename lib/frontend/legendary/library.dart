@@ -34,7 +34,7 @@ class LibraryPageItem extends StatelessWidget {
         width: 680,
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: NetworkImage(image["url"]), fit: BoxFit.fitHeight),
+              image: NetworkImage(image["url"]), fit: BoxFit.cover),
         ),
         child: InkWell(onTap: () {}),
       );
