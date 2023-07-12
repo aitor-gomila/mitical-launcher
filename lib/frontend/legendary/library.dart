@@ -28,6 +28,22 @@ class LibraryPageItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(game.appTitle);
+    final keyImages = game.metadata["keyImages"];
+
+    for (final image in keyImages) {
+      if (image["type"] != "DieselGameBoxTall") continue;
+
+      return Container(
+        height: 512,
+        width: 680,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: NetworkImage(image["url"]), fit: BoxFit.fitHeight),
+        ),
+        child: InkWell(onTap: () {}),
+      );
+    }
+
+    return Container();
   }
 }
