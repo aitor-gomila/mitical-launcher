@@ -22,7 +22,7 @@ class Application extends StatefulWidget {
 }
 
 class _StateApplication extends State<Application> {
-  int _selectedIndex = 0;
+  final int _selectedIndex = 0;
 
   final List<Widget> _widgetList = [
     Consumer<LegendaryService>(
@@ -36,22 +36,16 @@ class _StateApplication extends State<Application> {
         return LibraryPage(games: service.games!);
       },
     ),
-    Consumer<LegendaryService>(
-        builder: (context, service, child) {
-          if (service.status == null) {
-            return const Center(
-              child: CircularProgressIndicator()
-            );
-          }
+    Consumer<LegendaryService>(builder: (context, service, child) {
+      if (service.status == null) {
+        return const Center(child: CircularProgressIndicator());
+      }
 
-          return AccountPage(account: service.status!.account);
-        }),
+      return AccountPage(account: service.status!.account);
+    }),
   ];
 
-  final List<String> _namesList = [
-    "Library",
-    "Settings"
-  ];
+  final List<String> _namesList = ["Library", "Settings"];
 
   @override
   Widget build(BuildContext context) {
@@ -66,19 +60,6 @@ class _StateApplication extends State<Application> {
               icon: const Icon(Icons.refresh),
               onPressed: () => context.read<LegendaryService>().refresh(),
             )
-          ],
-        ),
-        bottomNavigationBar: NavigationBar(
-          selectedIndex: _selectedIndex,
-          onDestinationSelected: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
-          destinations: const [
-            NavigationDestination(icon: Icon(Icons.book), label: "Library"),
-            NavigationDestination(
-                icon: Icon(Icons.settings), label: "Settings"),
           ],
         ),
       ),
