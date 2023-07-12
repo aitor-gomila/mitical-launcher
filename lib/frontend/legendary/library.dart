@@ -11,6 +11,7 @@ class LibraryPage extends StatelessWidget {
     return GridView.builder(
       gridDelegate:
           const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 6),
+      itemBuilder: (context, index) => LibraryPageItem(game: games[index]),
       itemCount: games.length,
       padding: const EdgeInsets.all(10),
     );
@@ -32,6 +33,7 @@ class LibraryPageItem extends StatelessWidget {
       return Container(
         height: 697,
         width: 522,
+        margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           image: DecorationImage(
               image: NetworkImage(image["url"]), fit: BoxFit.cover),
