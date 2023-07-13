@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:legendary/legendary.dart';
 
+import 'package:mitic_launcher/frontend/legendary/game_page.dart';
+
 class LibraryPage extends StatelessWidget {
   const LibraryPage({super.key, required this.games});
 
