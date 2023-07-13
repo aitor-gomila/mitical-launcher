@@ -53,8 +53,6 @@ class _StateApplication extends State<Application> {
     }),
   ];
 
-  final List<String> _namesList = ["Library", "Settings"];
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
