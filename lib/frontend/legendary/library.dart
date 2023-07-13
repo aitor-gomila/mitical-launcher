@@ -9,8 +9,8 @@ class LibraryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate:
-          const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 6),
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 261),
       itemBuilder: (context, index) => LibraryPageItem(game: games[index]),
       itemCount: games.length,
       padding: const EdgeInsets.all(10),
