@@ -27,21 +27,23 @@ class LibraryPageItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final keyImages = game.metadata["keyImages"];
 
-    for (final image in keyImages) {
-      if (image["type"] != "DieselGameBoxTall") continue;
+    Map<String, dynamic> image =
+        keyImages.firstWhere((image) => image["type"] == "DieselGameBoxTall");
 
-      return Container(
-        height: 697,
-        width: 522,
-        margin: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: NetworkImage(image["url"]), fit: BoxFit.cover),
-        ),
-        child: InkWell(onTap: () {}),
-      );
-    }
-
-    return Container();
+    return Container(
+      height: 697,
+      width: 522,
+      margin: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+            image: NetworkImage(image["url"]),
+            fit: BoxFit.cover,
+            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.color)),
+      ),
+      child: InkWell(onTap: () {
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => GamePage(game: game)));
+      }),
+    );
   }
 }
