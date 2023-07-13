@@ -64,13 +64,31 @@ class _StateApplication extends State<Application> {
                   width: 150,
                   child: ListView(children: [
                     ListTile(
-                        title: const Text("Library"),
-                        leading: const Icon(Icons.book),
-                        onTap: () => setSelectedIndex(0)),
+                      title: const Text("Library"),
+                      leading: const Icon(Icons.book),
+                      onTap: () => setSelectedIndex(0),
+
+                      // if selectedIndex is 0, color with primaryColor
+                      iconColor: _selectedIndex == 0
+                          ? Theme.of(context).primaryColor
+                          : null,
+                      textColor: _selectedIndex == 0
+                          ? Theme.of(context).primaryColor
+                          : null,
+                    ),
                     ListTile(
-                        title: const Text("Settings"),
-                        leading: const Icon(Icons.settings),
-                        onTap: () => setSelectedIndex(1))
+                      title: const Text("Settings"),
+                      leading: const Icon(Icons.settings),
+                      onTap: () => setSelectedIndex(1),
+
+                      // if selectedIndex is 1, color with primaryColor
+                      textColor: _selectedIndex == 1
+                          ? Theme.of(context).primaryColor
+                          : null,
+                      iconColor: _selectedIndex == 1
+                          ? Theme.of(context).primaryColor
+                          : null,
+                    )
                   ])),
               Expanded(child: _widgetList[_selectedIndex])
             ],
